@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prefix Strings</title>
+    <style>
+        body {
+            background-image: url(https://tse3.mm.bing.net/th?id=OIF.cQaCGEmiSYnHdfIYuZFqCw&pid=Api&P=0&h=180);
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(26, 120, 79);
+        }
+        .results {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prefix Strings</h1>
+    <label for="prefix">Prefix:</label>
+    <input type="text" id="prefix" placeholder="Enter prefix">
+
+    <label for="strings">Strings (separated by commas):</label>
+    <textarea id="strings" placeholder="Enter strings separated by commas"></textarea>
+
+    <button onclick="addPrefix()">Add Prefix</button>
+
+    <div class="results" id="results"></div>
+
+    <script>
+        function addPrefix() {
+            const prefix = document.getElementById('prefix').value;
+            const strings = document.getElementById('strings').value.split(',');
+
+            const prefixedStrings = strings.map(str => prefix + str.trim());
+
+            document.getElementById('results').innerHTML = '<strong>Prefixed Strings:</strong><br>' + prefixedStrings.join('<br>');
+        }
+    </script>
+</body>
+</html>
